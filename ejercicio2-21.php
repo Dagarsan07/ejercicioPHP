@@ -6,14 +6,22 @@
 
 <body>
     <?php
-    function media()
+    function media($numeros)
     {
-        $num1 = 5;
-        $num2 = 9;
-        $media = ($num1 + $num2) / 2;
-        echo "<p>La media de $num1 y $num2 es: $media</p>";
+        $cuantos = count($numeros);
+        if ($cuantos == 0) {
+            return 0;
+        } else {
+            $total = array_sum($numeros);
+            $media = $total / $cuantos;
+            return $media;
+        }
     }
-    media();
+    $numeros = array(10, 15, 20, 25, 30);
+    $resultado = media($numeros);
+
+    echo "<p>Números: " . implode(", ", $numeros) . "</p>";
+    echo "<p>Media: $resultado</p>";
     ?>
 </body>
 
