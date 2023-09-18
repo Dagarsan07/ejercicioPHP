@@ -6,7 +6,18 @@
 
 <body>
     <?php
-
+    function masuno()
+    {
+        static $numero = 0;
+        ++$numero;
+        echo "<p>$numero</p>";
+    }
+    echo "<p>Primera llamada</p>";
+    masuno();
+    echo "<p>Segunda llamada</p>";
+    masuno();
+    echo "<p>Tercera llamada</p>";
+    masuno();
     ?>
 </body>
 
