@@ -7,11 +7,8 @@
 <body>
     <?php
     $numeros = array(1 => 1, 2 => 8, 3 => 10, 4 => 4);
-    $resultado = 0;
-    foreach ($numeros as $numero) {
-        $resultado += $numero;
-    }
-    echo "<p>La suma de todos los valores del array es: {$resultado}</p>"
+    $resultado = array_sum($numeros);
+    echo "<p>La suma de todos los valores del array es: $resultado</p>"
     ?>
 </body>
 
