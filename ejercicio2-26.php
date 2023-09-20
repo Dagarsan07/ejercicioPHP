@@ -1,11 +1,10 @@
 <html>
 
-<head>
-    <h1>Ejercicio 2.26</h1>
-</head>
-
 <body>
     <?php
+
+    include("ejercicio2-26cabesa.php");
+
     function seleccionarGanador($eleccion)
     {
         global $opciones;
@@ -20,12 +19,12 @@
                     if ($eleccion == 1) {
                         echo "<p>Has ganado</p>";
                     } else if ($eleccion == 2) {
-                        echo "<p>Has perdido</p>";
+                        echo "<p>Te ha ganado un ordenador. Ya me jodería</p>";
                     }
                     break;
                 case 1:
                     if ($eleccion == 0) {
-                        echo "<p>Has perdido</p>";
+                        echo "<p>Te ha ganado un ordenador. Ya me jodería</p>";
                     } else if ($eleccion == 2) {
                         echo "<p>Has ganado</p>";
                     }
@@ -34,7 +33,7 @@
                     if ($eleccion == 0) {
                         echo "<p>Has ganado</p>";
                     } else if ($eleccion == 1) {
-                        echo "<p>Has perdido</p>";
+                        echo "<p>Te ha ganado un ordenador. Ya me jodería</p>";
                     }
                     break;
             }
