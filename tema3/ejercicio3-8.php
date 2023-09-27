@@ -10,27 +10,32 @@
 </head>
 
 <body>
-    <div class="container w-50 mx-auto mt-4">
-        <form action="ejercicio3-8.php" method="post" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" name="nombre">
-            </div>
-            <div class="mb-3">
-                <label for="apellido" class="form-label">Apellido:</label>
-                <input type="text" class="form-control" name="apellido">
-            </div>
-            <div class="mb-3">
-                <label for="edad" class="form-label">Edad:</label>
-                <input type="text" class="form-control" name="edad">
-            </div>
-            <div class="mb-3">
-                <label for="imagen" class="form-label">Sube una imagen:</label>
-                <input type="file" class="form-control" name="imagen">
-            </div>
-            <button type="submit" class="btn btn-primary" value="buscar">Buscar</button>
-        </form>
+    <?php
+    if (!isset($_FILES['imagen'])) {
+    ?>
+
+        <div class="container w-50 mx-auto mt-4">
+            <form action="ejercicio3-8.php" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" name="nombre">
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" name="apellido">
+                </div>
+                <div class="mb-3">
+                    <label for="edad" class="form-label">Edad:</label>
+                    <input type="text" class="form-control" name="edad">
+                </div>
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Sube una imagen:</label>
+                    <input type="file" class="form-control" name="imagen">
+                </div>
+                <button type="submit" class="btn btn-primary" value="buscar">Buscar</button>
+            </form>
         <?php
+    } else {
         if (!empty($_POST)) {
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
@@ -51,8 +56,9 @@
             echo "<p>Tamaño de la imagen: " . $_FILES['imagen']['size'] . "</p>";
             echo "<img src='$destino'>";
         }
+    }
         ?>
-    </div>
+        </div>
 </body>
 
 </html>
