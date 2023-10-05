@@ -11,7 +11,7 @@
 
 <body>
     <div class="container mt-4 mx-auto">
-        <div class="col-3 mx-auto">
+        <div class="col-3 mx-auto mb-3">
             <h1 class="text-center py-3" style="background-color: orange;">ALTA DE LIBRO</h1>
             <form action="nuevo.php" method="post">
                 <div class="form-group">
@@ -57,6 +57,15 @@
             $stmt->bindValue(':autor', $autor);
             $stmt->bindValue(':disponible', $disponible);
             $stmt->execute();
+            if ($stmt->rowCount() > 0) {
+                echo '<div class="alert alert-success text-center w-50 mx-auto" role="alert">';
+                echo "$titulo del autor/ra $autor ha sido añadido correctamente a la base de datos";
+                echo '</div>';
+            } else {
+                echo '<div class="alert alert-success text-center w-50 mx-auto" role="alert">';
+                echo "$titulo del autor/ra $autor no ha podido añadirse a la base de datos. Ha tenido que ocurrir algún problema";
+                echo '</div>';
+            }
         }
         ?>
     </div>
